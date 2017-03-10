@@ -4,6 +4,7 @@ import math from 'mathjs'
 import Page from './Page'
 import Display from './Display'
 import NumPad from './NumPad'
+import Credits from './Credits'
 
 function addInputToEquation (state, props) {
   if (state.shouldGrabResult) {
@@ -28,8 +29,7 @@ function addInputToEquation (state, props) {
 
 function solveEquation (state) {
   const { equation } = state
-  console.log(typeof math.eval(state.equation));
-  if (equation[equation.length - 1] === '=') {
+  if (equation[equation.length - 1] === '=' || equation.length === 0) {
     return state
   } else {
     return {
@@ -98,6 +98,9 @@ class App extends Component {
       <Page>
         <Display equation={equation} result={result} />
         <NumPad handleInput={this.handleInput}/>
+        <Credits>
+          Design credits to <a href="https://dribbble.com/shots/2663800-Daily-UI-004-Calculator" target="_blank">Vivek Kumar</a>
+        </Credits>
       </Page>
     )
   }

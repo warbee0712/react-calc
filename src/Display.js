@@ -11,6 +11,7 @@ const DisplayWrapper = styled.div`
   text-align: right;
   @media only screen and (max-width: 768px) {
     width: calc(100vw - 80px);
+    max-width: 450px;
   }
 `
 
@@ -25,7 +26,7 @@ const Equation = styled.p`
 const Result = styled.p`
   color: #2B2A2A;
   line-height: 80px;
-  font-size: 5rem;
+  font-size: 4rem;
   margin: 0;
   @media only screen and (max-width: 768px) {
     line-height: 80px;
