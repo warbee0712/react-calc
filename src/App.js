@@ -28,12 +28,13 @@ function addInputToEquation (state, props) {
 
 function solveEquation (state) {
   const { equation } = state
+  console.log(typeof math.eval(state.equation));
   if (equation[equation.length - 1] === '=') {
     return state
   } else {
     return {
       equation: state.equation.concat('='),
-      result: math.eval(state.equation),
+      result: math.format(math.eval(state.equation), formatResult),
       shouldGrabResult: true
     }
   }
@@ -42,6 +43,14 @@ function solveEquation (state) {
 function deleteLastCharacterFromEquation (state) {
   return {
     equation: state.equation.slice(0,-1)
+  }
+}
+
+function formatResult (value) {
+  if (value > 999999999 || value < 0.000000001) {
+    return math.format(value, { notation: 'exponential', precision: 2 })
+  } else {
+    return value
   }
 }
 

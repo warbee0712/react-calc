@@ -9,6 +9,9 @@ const DisplayWrapper = styled.div`
   height: 150px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   text-align: right;
+  @media only screen and (max-width: 768px) {
+    width: calc(100vw - 80px);
+  }
 `
 
 const Equation = styled.p`
@@ -24,6 +27,10 @@ const Result = styled.p`
   line-height: 80px;
   font-size: 5rem;
   margin: 0;
+  @media only screen and (max-width: 768px) {
+    line-height: 80px;
+    font-size: 3rem;
+  }
 `
 
 const Display = ({ equation, result }) => {
