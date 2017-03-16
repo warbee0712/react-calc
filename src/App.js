@@ -99,7 +99,7 @@ class App extends Component {
         <Display equation={equation} result={result} />
         <NumPad handleInput={this.handleInput}/>
         <Credits>
-          Design credits to <a href="https://dribbble.com/shots/2663800-Daily-UI-004-Calculator" target="_blank">Vivek Kumar</a>
+          Developed by <a href="https://github.com/julianorafael">Juliano Rafael</a>. See the code on <a href="https://github.com/julianorafael/react-calc">github</a>. Design credits to <a href="https://dribbble.com/shots/2663800-Daily-UI-004-Calculator" target="_blank">Vivek Kumar</a>
         </Credits>
       </Page>
     )
